@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using Umbraco.Core;
 using Umbraco.Core.Services;
 using Umbraco.Web.Actions;
@@ -96,12 +97,16 @@ namespace Umbraco.Web.Models.Trees
             var item = Current.Actions.GetAction<T>();
             if (item == null) return null;
 
+            var values = textService.GetAllStoredValues(Thread.CurrentThread.CurrentUICulture);
+            values.TryGetValue($"actions/{item.Alias}_after", out var textAfter);
+            values.TryGetValue($"actions/{item.Alias}_before", out var textBefore);
+
             var menuItem = new MenuItem(item, textService.Localize($"actions/{item.Alias}"))
             {
                 SeparatorBefore = hasSeparator,
                 OpensDialog = opensDialog,
-                TextAfter = textService.Localize($"actions/{item.Alias}_after"),
-                TextBefore = textService.Localize($"actions/{item.Alias}_before")
+                TextAfter = textAfter,
+                TextBefore = textBefore
             };
 
             return menuItem;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Umbraco.Core;
 using Umbraco.Core.Services;
 using Umbraco.Web.Actions;
+using System.Threading;
 
 namespace Umbraco.Web.Models.Trees
 {
@@ -28,21 +29,17 @@ namespace Umbraco.Web.Models.Trees
             Name = name;
         }
 
-
-        //public MenuItem(string alias, ILocalizedTextService textService)
-        //    : this()
-        //{
-        //    Alias = alias;
-        //    Name = textService.Localize($"actions/{Alias}");
-        //}
-
         public MenuItem(string alias, ILocalizedTextService textService)
             : this()
         {
+            var values = textService.GetAllStoredValues(Thread.CurrentThread.CurrentUICulture);
+            values.TryGetValue($"actions/{alias}_after", out var textAfter);
+            values.TryGetValue($"actions/{alias}_before", out var textBefore);
+
             Alias = alias;
             Name = textService.Localize($"actions/{Alias}");
-            TextBefore = textService.Localize($"actions/{Alias}_before");
-            TextAfter = textService.Localize($"actions/{Alias}_after");
+            TextBefore = textBefore;
+            TextAfter = textAfter;
         }
 
         /// <summary>
