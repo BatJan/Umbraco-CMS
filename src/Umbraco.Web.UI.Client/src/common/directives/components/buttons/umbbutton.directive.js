@@ -126,13 +126,13 @@ Use this directive to render an umbraco button. The directive can be used to gen
 
                 // make it possible to pass in multiple styles
                 if(vm.buttonStyle.startsWith("[") && vm.buttonStyle.endsWith("]")) {
-                    
+
                     // when using an attr it will always be a string so we need to remove square brackets
                     // and turn it into and array
                     var withoutBrackets = vm.buttonStyle.replace(/[\[\]']+/g,'');
                     // split array by , + make sure to catch whitespaces
                     var array = withoutBrackets.split(/\s?,\s?/g);
-                    
+
                     angular.forEach(array, function(item){
                         vm.style = vm.style + " " + "btn-" + item;
                         if(item === "block") {
