@@ -108,6 +108,10 @@ Use this directive to render a button with a dropdown of alternative actions.
                 scope.dropdown.isOpen = false;
             };
 
+            scope.closeDropdownOnLeave = function() {
+                scope.dropdown.isOpen = false;
+            };
+
             scope.executeMenuItem = function(subButton) {
                 subButton.handler();
                 scope.closeDropdown();
