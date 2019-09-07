@@ -99,7 +99,9 @@ namespace Umbraco.Web.Models.Trees
             var menuItem = new MenuItem(item, textService.Localize($"actions/{item.Alias}"))
             {
                 SeparatorBefore = hasSeparator,
-                OpensDialog = opensDialog
+                OpensDialog = opensDialog,
+                TextAfter = textService.Localize($"actions/{item.Alias}_after"),
+                TextBefore = textService.Localize($"actions/{item.Alias}_before")
             };
 
             return menuItem;

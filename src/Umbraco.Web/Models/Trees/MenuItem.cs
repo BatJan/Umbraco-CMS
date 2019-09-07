@@ -29,11 +29,20 @@ namespace Umbraco.Web.Models.Trees
         }
 
 
+        //public MenuItem(string alias, ILocalizedTextService textService)
+        //    : this()
+        //{
+        //    Alias = alias;
+        //    Name = textService.Localize($"actions/{Alias}");
+        //}
+
         public MenuItem(string alias, ILocalizedTextService textService)
             : this()
         {
             Alias = alias;
             Name = textService.Localize($"actions/{Alias}");
+            TextBefore = textService.Localize($"actions/{Alias}_before");
+            TextAfter = textService.Localize($"actions/{Alias}_after");
         }
 
         /// <summary>
@@ -73,6 +82,12 @@ namespace Umbraco.Web.Models.Trees
         [DataMember(Name = "alias", IsRequired = true)]
         [Required]
         public string Alias { get; set; }
+
+        [DataMember(Name = "textBefore")]
+        public string TextBefore { get; set; }
+
+        [DataMember(Name = "textAfter")]
+        public string TextAfter { get; set; }
 
         /// <summary>
         /// Ensures a menu separator will exist before this menu item
