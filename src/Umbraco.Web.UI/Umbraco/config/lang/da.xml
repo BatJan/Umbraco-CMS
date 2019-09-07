@@ -6,14 +6,18 @@
   </creator>
   <area alias="actions">
     <key alias="assignDomain">Tilføj domæne</key>
+    <key alias="assignDomain_after">på denne node</key>
     <key alias="auditTrail">Revisionsspor</key>
     <key alias="browse">Gennemse elementer</key>
     <key alias="changeDocType">Skift dokumenttype</key>
     <key alias="copy">Kopier</key>
+    <key alias="copy_after">denne node til et andet sted i indholdstræet</key>
     <key alias="create">Opret</key>
+    <key alias="create_after">en ny node</key>
     <key alias="createPackage">Opret pakke</key>
     <key alias="createGroup">Opret gruppe</key>
     <key alias="delete">Slet</key>
+    <key alias="delete_after">denne node</key>
     <key alias="disable">Deaktivér</key>
     <key alias="emptyRecycleBin">Tøm papirkurv</key>
     <key alias="enable">Aktivér</key>
@@ -23,11 +27,15 @@
     <key alias="liveEdit">Redigér i Canvas</key>
     <key alias="logout">Log af</key>
     <key alias="move">Flyt</key>
+    <key alias="move_after">denne node til et andet sted i indholdstræet</key>
     <key alias="notify">Notificeringer</key>
+    <key alias="protect_before">Opsæt</key>
     <key alias="protect">Offentlig adgang</key>
+    <key alias="protect_after">for denne node</key>
     <key alias="publish">Udgiv</key>
     <key alias="unpublish">Afpublicér</key>
     <key alias="refreshNode">Genindlæs elementer</key>
+    <key alias="refreshNode_after">i indholdstræet</key>
     <key alias="republish">Genudgiv hele sitet</key>
     <key alias="rename" version="7.3.0">Omdøb</key>
     <key alias="restore" version="7.3.0">Gendan</key>
@@ -38,18 +46,22 @@
     <key alias="wasMovedTo">blev flyttet til</key>
     <key alias="wasCopiedTo">blev kopieret til</key>
     <key alias="wasDeleted">blev slettet</key>
+    <key alias="rights_before">Opsæt</key>
     <key alias="rights">Rettigheder</key>
+    <key alias="rights_after">for denne node</key>
     <key alias="rollback">Fortryd ændringer</key>
     <key alias="sendtopublish">Send til udgivelse</key>
     <key alias="sendToTranslate">Send til oversættelse</key>
     <key alias="setGroup">Sæt gruppe</key>
     <key alias="sort">Sortér</key>
+    <key alias="sort_after">: Justér soteringsrækkefølgen for denne node</key>
     <key alias="toPublish">Send til udgivelse</key>
     <key alias="translate">Oversæt</key>
     <key alias="update">Opdatér</key>
     <key alias="setPermissions">Sæt rettigheder</key>
     <key alias="unlock">Lås op</key>
     <key alias="createblueprint">Opret indholdsskabelon</key>
+    <key alias="createblueprint_after">baseret på denne node</key>
     <key alias="defaultValue">Standard værdi</key>
   </area>
   <area alias="actionCategories">
